@@ -10,7 +10,7 @@ type result = TupleToObject<typeof tuple> // expected { tesla: 'tesla', 'model 3
 
  */
 
-type TupleToObject<T extends readonly any[]> = {
+type TupleToObject<T extends readonly (string|number)[]> = {
   [P in T[number]]: P;
 }
 
